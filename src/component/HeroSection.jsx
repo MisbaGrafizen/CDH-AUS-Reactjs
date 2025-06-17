@@ -138,11 +138,11 @@ export default function HeroSection() {
       </div> */}
 
       <div className="container mx-auto px-4  pt-[110px] relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div className="w-[100%] mx-auto min-h-[80vh]">
           {/* Left side - Content */}
-          <div className="space-y-8">
+          <div className="w-[100%] mx-auto flex flex-col gap-[10px]  justify-center items-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <div className="inline-flex border items-center bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg mb-6">
+              <div className=" flex border items-center bg-white/80 backdrop-blur-sm rounded-full w-fit mx-auto px-4 py-2 shadow-lg mb-6">
                 <img
                   src={usaflag}
                   alt="Australia Flag"
@@ -151,9 +151,9 @@ export default function HeroSection() {
                 <span className="text-sm font-medium text-gray-700">Serving Australian Patients</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-5xl md:text-6xl  flex  gap-[20px] font-bold leading-tight">
                 <span className="text-gray-900">HELLO!</span>
-                <br />
+             
                 <span className=" CDH-gradiant ">
                   AUSTRALIA
                 </span>
@@ -166,19 +166,40 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-4"
             >
-              <p className="text-xl md:text-[18px] text-gray-700 leading-relaxed">
-                Are you looking for <span className="font-semibold  CDH-gradiant">affordable, world-class</span>
-                <br />
-                <span className=" CDH-gradiant  font-bold">
-                  dental treatment
-                </span>
-                ?
+              <p className="text-xl md:text-[18px] w-fit  justify-center mx-auto  text-gray-700 leading-relaxed">
+                Are you looking for <span className="font-semibold   pr-[6px] CDH-gradiant">affordable, world-class    dental treatment</span>
+      
+            
+                 ?
               </p>
 
               <p className="text-gray-600 text-[13px]">
                 Save up to 70% on premium dental procedures while experiencing the best of Indian hospitality and
                 world-class medical facilities.
               </p>
+                    <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative"
+            >
+ 
+              <div className="w-[300px] h-[300px] mx-auto relative">
+                {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse opacity-20"></div> */}
+                <div className="absolute inset-4 to-purple-500 border  rounded-full flex items-center justify-center">
+                  <img
+                    src={usaflag}
+                    alt="Australia Flag"
+                    className="w-[240px] h-[240px] rounded-full shadow-2xl object-cover "
+                  />
+                </div>
+
+
+            
+              </div>
+            </motion.div>
+          </div> 
             </motion.div>
 
             {/* Rotating services showcase */}
@@ -186,92 +207,56 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white/90 backdrop-blur-sm border rounded-2xl p-6 shadow-xl"
+              className=""
             >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-800">Our Specialties</h3>
-                <div className="flex space-x-1">
-                  {services.map((_, index) => (
-                    <div
-                      key={index}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        index === currentService ? " CDH-uae w-6" : "bg-gray-300"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
+          
 
-              <motion.div
-                key={currentService}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.5 }}
-                className="flex items-center space-x-4"
-              >
-                <div
-                  className={`w-12 h-12 rounded-full bg-gradient-to-r ${services[currentService].color} flex items-center justify-center text-2xl`}
-                >
-                  {services[currentService].icon}
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-900">{services[currentService].title}</h4>
-                  <p className="text-gray-600">{services[currentService].description}</p>
-                </div>
-              </motion.div>
+          {/* --- OUR SPECIALTIES (now three boxes side-by-side) ------------------- */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.4 }}
+  className=""
+>
+  <h3 className="text-lg font-semibold text-gray-800 pb-[10px] mb-2 text-center">
+    Our Specialties
+  </h3>
+
+  {/* three cards in a row (stack vertically on small screens) */}
+  <div className="flex flex-col sm:flex-row  pb-[10px] gap-4">
+    {services.map((service, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="flex flex-1 items-start gap-4 border rounded-xl p-4 shadow-md bg-white"
+      >
+        {/* colored icon bubble */}
+        <div
+          className={`w-12 h-12 shrink-0 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center text-2xl text-white`}
+        >
+          {service.icon}
+        </div>
+
+        {/* text */}
+        <div>
+          <h4 className="font-semibold text-gray-900">{service.title}</h4>
+          <p className="text-sm text-gray-600">{service.description}</p>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
+
             </motion.div>
 
         
           </div>
 
-          {/* Right side - Visual */}
-          <div className="relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative"
-            >
-              {/* Main circular element */}
-              <div className="w-96 h-96 mx-auto relative">
-                {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse opacity-20"></div> */}
-                <div className="absolute inset-4 to-purple-500 border  rounded-full flex items-center justify-center">
-                  <img
-                    src={usaflag}
-                    alt="Australia Flag"
-                    className="w-[300px] h-[300px] rounded-full shadow-2xl object-cover "
-                  />
-                </div>
 
-                {/* Floating service cards */}
-                {services.map((service, index) => (
-                  <motion.div
-                    key={index}
-                    className={`absolute w-24 h-24 bg-white rounded-2xl shadow-xl flex flex-col items-center justify-center ${
-                      index === 0
-                        ? "top-0 right-0"
-                        : index === 1
-                          ? "bottom-0 left-0"
-                          : "top-1/2 -right-12 transform -translate-y-1/2"
-                    }`}
-                    animate={{
-                      y: [0, -10, 0],
-                      rotate: [0, 5, 0],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Number.POSITIVE_INFINITY,
-                      delay: index * 0.5,
-                    }}
-                  >
-                    <div className="text-2xl mb-1">{service.icon}</div>
-                    <div className="text-xs font-medium text-center px-1">{service.title.split(" ")[0]}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
+
         </div>
       </div>
 
