@@ -18,7 +18,7 @@ function App() {
     <>
   
       <div className="w-100 ease-soft-spring h-[100%]  !bg-[#fbffff]  duration-1000 ">
-        {/* <NotificationProvider companyId={user?.companyId}> */}
+     
         <Routes>
 
           <Route path="/" element={<Home />} />

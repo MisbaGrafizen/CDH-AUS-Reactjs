@@ -51,6 +51,7 @@ export default function Footer() {
   //   }
   // };
 
+
   const [isOpen, setIsOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -76,7 +77,7 @@ export default function Footer() {
     "Others",
   ]
 
-  const cities = ["Abu Dhabi (13 & 14 June) ", "Dubai (15 & 16 June)", "Sharjah (17 & 18 June)",]
+  const cities = ["Sydney (13 , 14 & 15 September) ", "Brisbane (17 & 18 September)", "Melbourne (19 , 20 & 21 June)",]
 
   const timeSlots = [
     { value: "morning", label: "Morning (10am-1pm)" },
@@ -84,21 +85,38 @@ export default function Footer() {
     { value: "evening", label: "Evening (4pm-6pm)" },
   ]
 
-   const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (name === 'treatment') {
-      setFormData((prev) => {
-        const newList = checked
-          ? [...prev.treatment, value]
-          : prev.treatment.filter((t) => t !== value);
-        return { ...prev, treatment: newList };
-      });
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
-    }
-  };
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target
 
-    const validate = () => {
+    if (type === "checkbox") {
+      if (checked) {
+        setFormData({
+          ...formData,
+          treatment: [...formData.treatment, value],
+        })
+      } else {
+        setFormData({
+          ...formData,
+          treatment: formData.treatment.filter((item) => item !== value),
+        })
+      }
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      })
+    }
+
+    // Clear error for this field if it exists
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: null,
+      })
+    }
+  }
+
+  const validate = () => {
     let tempErrors = {};
     if (!formData.name) tempErrors.name = 'Name is required';
     if (!formData.phone || formData.phone.length !== 10) tempErrors.phone = 'Valid phone is required';
@@ -112,12 +130,12 @@ export default function Footer() {
     return Object.keys(tempErrors).length === 0;
   };
 
- const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     try {
-      const res = await axios.post("https://server.grafizen.in/api/v2/cdh/admin/appointment", formData);
+      const res = await axios.post("https://server.grafizen.com/api/v2/cdh/admin/appointment", formData);
       alert("Consultation booked successfully!");
       setFormData({
         name: '',
@@ -135,7 +153,6 @@ export default function Footer() {
     }
   };
 
-
   // Close modal when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -149,6 +166,7 @@ export default function Footer() {
       document.removeEventListener("mousedown", handleClickOutside)
     }
   }, [])
+
 
   return (
     <>
@@ -358,17 +376,24 @@ export default function Footer() {
                   Rajkot, Gujarat 360002
                 </span>
               </li>
-              <li className="flex items-center">
-                <Phone className="mr-3 h-5 w-5 text-blue-400 flex-shrink-0" />
-                <a href="tel:+12125551234" className="hover:text-blue-300 transition-colors text-[13px] text-gray-300">
+     <li className="flex items-center">
+                  <Phone className="mr-3 h-5 w-5 text-blue-400 flex-shrink-0" />
+                  <a href="tel:+919609696000" className="hover:text-blue-300 transition-colors text-[13px] text-gray-300">
 
-                  +91-8100042000
-                </a>
-              </li>
+                    +91 9609696000
+                  </a>
+                </li>
+                <li className="flex items-center">
+                  <Phone className="mr-3 h-5 w-5 text-blue-400 flex-shrink-0" />
+                  <a href="tel:+919091919090" className="hover:text-blue-300 transition-colors text-[13px] text-gray-300">
+
+                    +91 9091919090
+                  </a>
+                </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-blue-400 flex-shrink-0" />
                 <a href="mailto:info@brightsmile.com" className="hover:text-blue-300 transition-colors text-[13px] text-gray-300">
-                  hello@rajkotdentist.com
+        internationalcdh@gmail.com
                 </a>
               </li>
               <li className="flex items-start">
@@ -433,7 +458,8 @@ export default function Footer() {
 
 
 
-     {isOpen && (
+   
+         {isOpen && (
            <div className="fixed font-Poppins inset-0 z-50 flex items-center justify-center modal-overlay bg-black/50 backdrop-blur-sm p-4">
              <div className="bg-white w-full max-w-3xl rounded-2xl overflow-hidden  shadow-2xl  max-h-[600px] overflow-y-auto relative animate-fadeIn">
                {/* Close button */}
@@ -636,7 +662,7 @@ export default function Footer() {
                            {/* Static Country Code Display */}
                            <div className="absolute left-9 top-1/2 transform -translate-y-1/2 z-10">
                              <div className="text-[16px] font-[400] px-2 py-[2px] rounded-md bg-white text-gray-800 w-[50px] text-center">
-                               +971
+                               +61
                              </div>
                            </div>
    
@@ -651,7 +677,7 @@ export default function Footer() {
                                  setFormData((prev) => ({
                                    ...prev,
                                    phone: input,
-                                   countryCode: '+971', // ✅ enforce +971
+                                   countryCode: '+61', // ✅ enforce +971
                                  }));
                                }
                              }}
@@ -673,7 +699,7 @@ export default function Footer() {
                              name="email"
                              value={formData.email}
                              onChange={handleInputChange}
-                             className={`w-full pl-10 p-2.5 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all ${errors.email ? "border-red-500" : "border-gray-300"
+                             className={`w-full pl-10 p-2.5 border rounded-lg focus:ring-[0px] focus:ring-teal-500 focus:border-teal-500 outline-none transition-all ${errors.email ? "border-red-500" : "border-gray-300"
                                }`}
                              placeholder="Email Address"
                            />
@@ -690,7 +716,7 @@ export default function Footer() {
                              name="userCity"
                              value={formData.userCity}
                              onChange={handleInputChange}
-                             className={`w-full pl-10 p-2.5 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all ${errors.userCity ? "border-red-500" : "border-gray-300"
+                             className={`w-full pl-10 p-2.5 border rounded-lg focus:ring-[0px] focus:ring-teal-500 focus:border-teal-500 outline-none transition-all ${errors.userCity ? "border-red-500" : "border-gray-300"
                                }`}
                              placeholder="Your City"
                            />

@@ -160,12 +160,12 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <div className=" w-[100%] pt-[40px]">
+    <div className=" w-[100%] pt-[50px]">
       <div className=" mx-auto">
   <h2 className=" !text-[60px] font-[500] text-gray-800 mb-2  mx-auto left-0 right-0 font-Cursive   top-[-30px] md:top-[-35px] text-center">Why Choose Us?</h2>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <section className="grid gap-6 grid-cols-2 ">
+          <section className="grid gap-[10px] md:gap-6 md:grid-cols-2 ">
             {features.map((feature, i) => (
               <FeatureCard
                 key={i}

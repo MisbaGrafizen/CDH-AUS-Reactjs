@@ -14,6 +14,7 @@ import Testimonials from "../../component/Testimonials";
 import AlertBanner from "../../component/AlertBanner";
 import Footer from "../../component/Footer";
 import ListOfAppoinments from "../../component/listOfAppoinments";
+import DentalBooking from "../../component/DentalBooking";
 
 export default function Home() {
 
@@ -25,6 +26,7 @@ export default function Home() {
 
             <section className="  font-Poppins flex flex-col   w-[90%] md:w-[80%]   2xl:w-[1200px]   gap-[30px] h-[100%] mx-auto">
                 <HeroSection />
+                <DentalBooking />
                 <UpToOffer />
                 <IntroDuction />
                 <ComParison />

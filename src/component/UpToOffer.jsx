@@ -152,7 +152,7 @@ export default function UpToOffer() {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Upto{" "}
-            <span className="bg-gradient-to-r from-purple-600 to-red-600 bg-clip-text text-transparent">50% - 70%</span>{" "}
+            <span className=" CDH-gradiant">50% - 70%</span>{" "}
             Savings
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -164,8 +164,8 @@ export default function UpToOffer() {
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              className={`relative overflow-hidden h-fit  bg-[#fff] min-h-[300px] border rounded-2xl shadow-lg cursor-pointer transition-all duration-300 ${
-                activeService === service.id ? "ring-2 ring-offset-2 ring-purple-500" : ""
+              className={`relative overflow-hidden   bg-[#fff] h-[340px] border rounded-2xl shadow-lg cursor-pointer transition-all duration-300 ${
+                activeService === service.id ? "r" : ""
               }`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -206,7 +206,7 @@ export default function UpToOffer() {
                 </div>
 
                 {/* Expand indicator */}
-                <div className="flex items-center justify-between">
+                {/* <div className="flex items-center justify-between">
                   <span className="text-sm font-medium text-gray-500">
                     {activeService === service.id ? "Less details" : "More details"}
                   </span>
@@ -216,10 +216,10 @@ export default function UpToOffer() {
                   >
                     <ChevronRight className="w-5 h-5 text-gray-400" />
                   </motion.div>
-                </div>
+                </div> */}
 
                 {/* Expanded content */}
-                <AnimatePresence>
+                {/* <AnimatePresence>
                   {activeService === service.id && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
@@ -257,7 +257,7 @@ export default function UpToOffer() {
 
                     </motion.div>
                   )}
-                </AnimatePresence>
+                </AnimatePresence> */}
               </div>
             </motion.div>
           ))}

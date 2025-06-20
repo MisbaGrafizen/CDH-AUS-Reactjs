@@ -70,7 +70,7 @@ export default function AlertBanner() {
     "Others",
   ]
 
-  const cities = ["Abu Dhabi (13 & 14 June) ", "Dubai (15 & 16 June)", "Sharjah (17 & 18 June)",]
+  const cities = ["Sydney (13 , 14 & 15 September) ", "Brisbane (17 & 18 September)", "Melbourne (19 , 20 & 21 June)",]
 
   const timeSlots = [
     { value: "morning", label: "Morning (10am-1pm)" },
@@ -163,7 +163,7 @@ export default function AlertBanner() {
 
   return (
     <>
-      <div className=" md:w-[85%] mx-auto  w-[100%]  mb-[40px] p-4">
+      <div className=" md:w-[85%] mx-auto  w-[100%]  mb-[40px] mt-[20px] p-4">
         <div className="bg-[#fff] shadow-md rounded-[20px]  border border-gray-100 md:h-[180px] p-[15px] md:p-[20px]">
           <div className="flex items-center w-[100%] gap-[12%]">
             <div className="flex items-center  relative gap-6">
@@ -187,7 +187,7 @@ export default function AlertBanner() {
 
           {/* Message */}
           <p className="text-[15px] text-gray-600 w-[] font-Poppins mt-[10px] max-w-[800px]">
-            Slots are limited - Reserve your meeting with Dr. Anand Jasani in Leicester, Wembley, Central London,Birmingham or Crawley.
+            Slots are limited - Reserve your meeting with Dr. Anand Jasani & Team City Dental in Sydney, Brisbane or Melbourne.
 
           </p>
 
@@ -410,7 +410,7 @@ export default function AlertBanner() {
                         {/* Static Country Code Display */}
                         <div className="absolute left-9 top-1/2 transform -translate-y-1/2 z-10">
                           <div className="text-[16px] font-[400] px-2 py-[2px] rounded-md bg-white text-gray-800 w-[50px] text-center">
-                            +971
+                            +61
                           </div>
                         </div>
 
@@ -425,7 +425,7 @@ export default function AlertBanner() {
                               setFormData((prev) => ({
                                 ...prev,
                                 phone: input,
-                                countryCode: '+971', // ✅ enforce +971
+                                countryCode: '+61', // ✅ enforce +971
                               }));
                             }
                           }}
@@ -447,7 +447,7 @@ export default function AlertBanner() {
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          className={`w-full pl-10 p-2.5 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all ${errors.email ? "border-red-500" : "border-gray-300"
+                          className={`w-full pl-10 p-2.5 border rounded-lg focus:ring-[0px] focus:ring-teal-500 focus:border-teal-500 outline-none transition-all ${errors.email ? "border-red-500" : "border-gray-300"
                             }`}
                           placeholder="Email Address"
                         />
@@ -464,7 +464,7 @@ export default function AlertBanner() {
                           name="userCity"
                           value={formData.userCity}
                           onChange={handleInputChange}
-                          className={`w-full pl-10 p-2.5 border rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all ${errors.userCity ? "border-red-500" : "border-gray-300"
+                          className={`w-full pl-10 p-2.5 border rounded-lg focus:ring-[0px] focus:ring-teal-500 focus:border-teal-500 outline-none transition-all ${errors.userCity ? "border-red-500" : "border-gray-300"
                             }`}
                           placeholder="Your City"
                         />

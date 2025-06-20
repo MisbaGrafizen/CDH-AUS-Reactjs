@@ -151,7 +151,7 @@ export default function HeroSection() {
                 <span className="text-sm font-medium text-gray-700">Serving Australian Patients</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl  flex  gap-[20px] font-bold leading-tight">
+              <h1 className="text-4xl md:text-6xl  flex gap-[10px] md:gap-[20px] font-bold leading-tight">
                 <span className="text-gray-900">HELLO!</span>
              
                 <span className=" CDH-gradiant ">
@@ -166,14 +166,14 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-4"
             >
-              <p className="text-xl md:text-[18px] w-fit  justify-center mx-auto  text-gray-700 leading-relaxed">
+              <p className="text-[16px] md:text-[18px] w-fit  text-center justify-center mx-auto  text-gray-700 leading-[20px] md:leading-relaxed">
                 Are you looking for <span className="font-semibold   pr-[6px] CDH-gradiant">affordable, world-class    dental treatment</span>
       
             
                  ?
               </p>
 
-              <p className="text-gray-600 text-[13px]">
+              <p className="text-gray-600 text-center text-[13px]">
                 Save up to 70% on premium dental procedures while experiencing the best of Indian hospitality and
                 world-class medical facilities.
               </p>

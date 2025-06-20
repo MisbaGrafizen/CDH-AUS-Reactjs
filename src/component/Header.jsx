@@ -23,7 +23,7 @@ export default function Header() {
         <div className="flex w-full">
           <div className="flex w-full">
             <div className="flex w-full relative justify-between">
-            <div className=" flex w-[79%] h-[1.5px] left-0 right-0 mx-auto absolute top-[36px] bg-[#0d277e8f]">
+            <div className=" flex md:w-[79%] w-[59%] h-[1.5px] left-0 right-0 mx-auto absolute top-[36px] bg-[#0d277e8f]">
 
             </div>
               <div className=" flex items-center">
@@ -136,7 +136,7 @@ export default function Header() {
 
               </div>
               <Link className="w-fit pr-[10px]" to={"/"}>
-                  <img className="flex w-[60px]  md:mt-[-3px]  mt-[-5px]  md:w-[80px]" src={logo2} alt="Basalt Logo" />
+                  <img className="flex w-[60px]  md:mt-[-3px]  mt-[6px]  md:w-[80px]" src={logo2} alt="Basalt Logo" />
                 </Link>
             </div>
           </div>

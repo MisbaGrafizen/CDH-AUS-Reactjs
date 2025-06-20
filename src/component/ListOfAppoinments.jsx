@@ -7,24 +7,24 @@ export default function ListOfAppoinments() {
     const events = [
         {
             id: 1,
-            dates: "13 & 14 June",
-            location: "Abu Dhabi",
+            dates: "13 , 14 & 15 September",
+            location: "Sydney",
             venue: "10am to 6pm",
 
         },
         {
             id: 2,
-            dates: "15 & 16 June",
-            location: "Dubai",
+            dates: "17 & 18 September",
+            location: "Brisbane",
             venue: "10am to 6pm",
            
         },
         {
             id: 3,
-            dates: "17 & 18 June",
-            location: "Sharjah",
+            dates: "19, 20 & 21 September",
+            location: "Melbourne",
             venue: "10am to 6pm",
-            mapUrl: "https://maps.google.com/?q=Sharjah",
+            // mapUrl: "https://maps.google.com/?q=Sharjah",
         },
  
     ];
@@ -34,7 +34,7 @@ export default function ListOfAppoinments() {
     };
 
     return (
-        <div className="w-full mx-auto mt-[30px] p-4">
+        <div className="w-full mx-auto  mt-[50px] p-4">
             <h2 className="text-2xl md:text-[45px] font-[600] text-center mb-8">Event Schedule</h2>
 
 
@@ -76,7 +76,7 @@ export default function ListOfAppoinments() {
                             onClick={() => toggleMobileRow(event.id)}
                         >
                             <div className="flex items-center">
-                                <Calendar className="w-5 h-5 mr-2 text-[#1c4c10]" />
+                                <Calendar className="w-5 h-5 mr-2 text-[#ab2929cc]" />
                                 <span className="font-medium text-blue-800">{event.dates}</span>
                             </div>
                             <ChevronDown

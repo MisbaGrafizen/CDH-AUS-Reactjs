@@ -27,8 +27,8 @@ export default function IntroDuction() {
             </div> */}
 
 
-    <section className="py-16 ">
-      <div className="container mx-auto px-4">
+    <section className="pb-[40px] pt-[25px] ">
+      <div className="container mx-auto md:px-4">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
           {/* Left side - Doctor profile */}
           <div className="lg:w-5/12">
@@ -50,15 +50,15 @@ export default function IntroDuction() {
               <div className="absolute bottom-8 -right-6 w-32 h-32 rounded-full bg-purple-100 z-0"></div>
 
               {/* Credentials badge */}
-              <div className="absolute -bottom-4 border border-[rgba(255,230,230,0.42)] left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-full py-2 px-2 z-20">
-                <p className="text-center text-[13px] font-medium text-gray-800">Director, City Dental Hospital</p>
+              <div className="absolute -bottom-4  w-[200px] md:w-fit border border-[rgba(255,230,230,0.42)] left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-full py-2 px-2 z-20">
+                <p className="text-center text-[10px] md:text-[13px] font-medium text-gray-800">Director, City Dental Hospital</p>
               </div>
             </div>
 
             {/* Doctor info */}
             <div className="pt-8 text-center">
               <h3 className="text-2xl font-bold  ">Dr. Anand Jasani</h3>
-              <p className="CDH-gradiant font-medium">Implantologist & CDH</p>
+              <p className="CDH-gradiant font-medium"> MDS (Implantologist & Periodontist) </p>
               <div className="mt-4 flex justify-center space-x-4">
                 <span className="inline-flex items-center text-sm text-gray-600">
                   <MapPin className="w-4 h-4 mr-1" />
@@ -66,7 +66,7 @@ export default function IntroDuction() {
                 </span>
                 <span className="inline-flex items-center text-sm text-gray-600">
                   <Clock className="w-4 h-4 mr-1" />
-                  20+ Years Experience
+                  25+ Years Experience
                 </span>
               </div>
             </div>
@@ -78,13 +78,13 @@ export default function IntroDuction() {
               Limited Time Opportunity
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-[700] leading-[40px] mb-6">
-              This June 2025 — A Rare Opportunity for <span className=" CDH-gradiant ">UAE Patients!</span>
+            <h2 className="text-[27px] md:text-4xl font-[700] leading-[33px] md:leading-[40px] mb-6">
+              This September 2025 — A Rare Opportunity for <span className=" CDH-gradiant ">AUS Patients!</span>
             </h2>
 
-            <p className="text-[15px] text-gray-700 mb-6">
+            <p className="text-[15px] text-gray-700  text-justify mb-6">
               Looking for expert dental care in India? Now, you can meet India's leading implantologist, Dr. Anand
-              Jasani, right here in the UAE! As the Director of City Dental Hospital, Rajkot, Dr. Jasani brings decades
+              Jasani, right here in the AUS! As the Director of City Dental Hospital, Rajkot, Dr. Jasani brings decades
               of experience in dental implants, smile makeovers, and full-mouth rehabilitation — offering you
               world-class treatment planning at affordable costs.
             </p>
@@ -93,20 +93,20 @@ export default function IntroDuction() {
               <h3 className="font-bold text-lg mb-2">Benefits of This Special Opportunity:</h3>
               <ul className="space-y-2">
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
                   <span className=' text-[14px]'>One-on-One consultation without traveling to India</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Save 50%-70% on premium dental treatments</span>
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span className=' text-[14px]'>Save 50%-70% on premium dental treatments</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Receive honest advice and personalized treatment plans</span>
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span className=' text-[14px]'>Receive honest advice and personalized treatment plans</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                  <span>Complete dental tourism support and travel assistance</span>
+                  <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                  <span className=' text-[14px]'>Complete dental tourism support and travel assistance</span>
                 </li>
               </ul>
             </div>

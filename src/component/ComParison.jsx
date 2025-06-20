@@ -6,129 +6,90 @@ import india from "../../public/uk/india.jpg"
 
 
 export default function ComParison() {
-  const costComparisonData = [
-    {
-      treatment: "All-On 4 Dental Implant",
-      indiaCost: "AED 20000",
-      uaeCost: "AED 40000",
-      savings: "50% Savings"
-    },
-    {
-      treatment: "All-On 6 Dental Implant",
-      indiaCost: "AED 24000",
-      uaeCost: "AED 60000",
-      savings: "55-65% Savings"
-    },
-    {
-      treatment: "Full Mouth Dental Implant",
-      indiaCost: "AED 30000",
-      uaeCost: "AED 70000+",
-      savings: "60-65% Savings"
-    },
-    {
-      treatment: "Smile Designing",
-      indiaCost: "AED 8000 - AED 15000",
-      uaeCost: "AED 25000 - AED 40000",
-      savings: "60-70% Savings"
-    },
-    {
-      treatment: "Smile Makeover",
-      indiaCost: "AED 8000 - AED 12000",
-      uaeCost: "AED 20000 - AED 35000",
-      savings: "60-70% Savings"
-    },
-    {
-      treatment: "Emax Veneers",
-      indiaCost: "AED 500 - AED 700",
-      uaeCost: "AED 1800 - AED 2500",
-      savings: "65-75% Savings"
-    },
-    {
-      treatment: "Aligners",
-      indiaCost: "AED 4000 - AED 6000",
-      uaeCost: "AED 12000 - AED 18000",
-      savings: "60-70% Savings"
-    },
-    {
-      treatment: "Whitening",
-      indiaCost: "AED 400 - AED 600",
-      uaeCost: "AED 1200 - AED 2000",
-      savings: "60-70% Savings"
-    }
-  ];
 
   const [hoveredRow, setHoveredRow] = useState(null)
 
-  const treatments = [
-    {
-      id: 1,
-      name: "All-On 4 Dental Implant",
-      indiaPrice: "AED 20000",
-      ausPrice: "AED 40000",
-      savings: "50% Savings",
-      savingsPercent: 50,
-    },
-    {
-      id: 2,
-      name: "All-On 6 Dental Implant",
-      indiaPrice: "AED 24000",
-      ausPrice: "AED 60000",
-      savings: "55-65% Savings",
-      savingsPercent: 60,
-    },
-    {
-      id: 3,
-      name: "Full Mouth Dental Implant",
-      indiaPrice: "AED 30000",
-      ausPrice: "AED 70000+",
-      savings: "60-65% Savings",
-      savingsPercent: 62,
-    },
-    {
-      id: 4,
-      name: "Smile Designing",
-      indiaPrice: "AED 8000 - AED 15000",
-      ausPrice: "AED 25000 - AED 40000",
-      savings: "60-70% Savings",
-      savingsPercent: 65,
-    },
-    {
-      id: 5,
-      name: "Smile Makeover",
-      indiaPrice: "AED 8000 - AED 12000",
-      ausPrice: "AED 20000 - AED 35000",
-      savings: "60-70% Savings",
-      savingsPercent: 65,
-    },
-    {
-      id: 6,
-      name: "Emax Veneers",
-      indiaPrice: "AED 500 - AED 700",
-      ausPrice: "AED 1800 - AED 2500",
-      savings: "65-75% Savings",
-      savingsPercent: 70,
-    },
-    {
-      id: 7,
-      name: "Aligners",
-      indiaPrice: "AED 4000 - AED 6000",
-      ausPrice: "AED 12000 - AED 18000",
-      savings: "60-70% Savings",
-      savingsPercent: 65,
-    },
-    {
-      id: 8,
-      name: "Whitening",
-      indiaPrice: "AED 400 - AED 600",
-      ausPrice: "AED 1200 - AED 2000",
-      savings: "60-70% Savings",
-      savingsPercent: 65,
-    },
-  ]
+const treatments = [
+  {
+    id: 1,
+    name: "Single Dental Implant",
+    indiaPrice: "AUD 475 – AUD 760",
+    ausPrice: "AUD 4,000 – AUD 7,000",
+    savings: "≈ 85–90% Savings",
+    savingsPercent: 88,
+  },
+
+
+  {
+    id:2,
+    name: "All-On 4 Dental Implant",
+    indiaPrice: "AUD 6,500 – AUD 7,000",
+    ausPrice: "AUD 19,000",
+    savings: "60–65% Savings",
+    savingsPercent: 62,
+  },
+  {
+    id: 3,
+    name: "All-On 6 Dental Implant",
+    indiaPrice: "AUD 7,800 – AUD 8,500",
+    ausPrice: "AUD 25,000",
+    savings: "60–65% Savings",
+    savingsPercent: 62,
+  },
+  {
+    id: 4,
+    name: "Full Mouth Dental Implant ",
+    indiaPrice: "AUD 7,500 – AUD 9,000",
+    ausPrice: "AUD 27,000+",
+    savings: "60–70% Savings",
+    savingsPercent: 65,
+  },
+  {
+    id: 5,
+    name: "Smile Designing",
+    indiaPrice: "AUD 3,000 – AUD 5,600",
+    ausPrice: "AUD 9,250 – AUD 14,800",
+    savings: "60–70% Savings",
+    savingsPercent: 65,
+  },
+  {
+    id: 6,
+    name: "Smile Makeover",
+    indiaPrice: "AUD 3,000 – AUD 4,500",
+    ausPrice: "AUD 7,400 – AUD 13,000",
+    savings: "60–70% Savings",
+    savingsPercent: 65,
+  },
+  {
+    id: 7,
+    name: "Emax Veneers",
+    indiaPrice: "AUD 660 – AUD 920",
+    ausPrice: "AUD 4,400 – AUD 6,600",
+    savings: "65–75% Savings",
+    savingsPercent: 70,
+  },
+  {
+    id: 8,
+    name: "Aligners",
+    indiaPrice: "AUD 55 – AUD 100",
+    ausPrice: "AUD 180 – AUD 260",
+    savings: "60–70% Savings",
+    savingsPercent: 65,
+  },
+  {
+    id: 9,
+    name: "Whitening",
+    indiaPrice: "AUD 150 – AUD 220",
+    ausPrice: "AUD 440 – AUD 740",
+    savings: "60–70% Savings",
+    savingsPercent: 65,
+  },
+];
+
 
 
   return (
-    <div className='flex flex-col pt-[0px] md:gap-[30px] w-[100%]'>
+    <div className='flex flex-col pt-[10px] md:gap-[30px] w-[100%]'>
       <h1 className='font-[700] mx-auto text-[35px] md:text-[40px] md:flex gap-[20px]'>
         <b className='cdh-gradiant font-[700]'>Cost</b> Comparison
         <span className='md:flex hidden mx-auto md:text-[40px] text-[39px] items-center gap-[10px]'>
@@ -140,33 +101,10 @@ export default function ComParison() {
         AUS <p className='CDH-gradiant text-[25px]'>V/S</p> INDIA
       </span>
 
-      {/* <div className='md:w-[100%] px-[10px] pb-[50px] overflow-x-auto'>
-        <div className="shadow-xl md:w-[100%] w-[600px] rounded-md border-[#20a3ba]">
-          <table className="w-full rounded-md overflow-hidden border-collapse">
-            <thead>
-              <tr className="bg-gradient-to-r text-[#ff] from-[#00843e6f] to-[#c8102f83]">
-                <th className="text-left font-[600] p-3">Treatment</th>
-                <th className="text-left font-[600] p-3">Cost in India</th>
-                <th className="text-left font-[600] p-3">AUS Cost</th>
-                <th className="text-left font-[600] p-3"> Approx Savings</th>
-              </tr>
-            </thead>
-            <tbody>
-              {costComparisonData.map((row, index) => (
-                <tr key={index} className="even:bg-white odd:bg-gradient-to-r odd:from-[#58c45f14] odd:to-[#f3f3f3]">
-                  <td className="p-3">{row.treatment}</td>
-                  <td className="p-3">{row.indiaCost}</td>
-                  <td className="p-3">{row.uaeCost}</td>
-                  <td className="p-3">{row.savings}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div> */}
 
-     <div className="overflow-hidden  rounded-[10px] shadow-lg">
-          <table className="w-full border-collapse border  ">
+
+     <div className=" md:overflow-hidden overflow-x-auto  rounded-[10px] shadow-lg">
+          <table className="w-full min-w-[1000px] border-collapse border  ">
             {/* Table Header */}
             <thead>
               <tr>
@@ -214,12 +152,12 @@ export default function ComParison() {
                     <div className="font-medium">{treatment.name}</div>
                   </td>
                   <td className="py-3 px-6 text-center border-b border-gray-200">
-                    <div className="inline-block bg-orange-50 text-orange-800 py-1 px-3 rounded-full text-[14px] font-medium">
+                    <div className="inline-block bg-orange-50 text-orange-800 border-[1px] border-[#e0862c52] py-1 px-3 leading-[17px] rounded-full text-[13px] font-medium">
                       {treatment.indiaPrice}
                     </div>
                   </td>
                   <td className="py-3 px-6 text-center border-b border-gray-200">
-                    <div className="inline-block bg-blue-50 text-[14px]  text-blue-800 py-1 px-3 rounded-full font-medium">
+                    <div className="inline-block bg-blue-50 text-[13px]  text-blue-800  border-[1px] border-[#241ae052] py-1 px-3 leading-[17px] rounded-full font-medium">
                       {treatment.ausPrice}
                     </div>
                   </td>
@@ -227,7 +165,7 @@ export default function ComParison() {
                     <div className="relative">
                       <div className="flex items-center justify-center">
                         <div
-                          className={`h-8 bg-[#08ff313d] font-[600] text-[14px]  rounded-full flex items-center justify-center px-4 transition-all duration-300 ${
+                          className={` bg-[#08ff313d] font-[500] py-[2px] text-[14px]  rounded-full flex items-center justify-center px-4 transition-all duration-300 ${
                             hoveredRow === treatment.id ? "w-fit" : "w-fit"
                           }`}
                         >
