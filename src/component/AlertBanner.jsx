@@ -70,7 +70,7 @@ export default function AlertBanner() {
     "Others",
   ]
 
-  const cities = ["Sydney (13 , 14 & 15 September) ", "Brisbane (17 & 18 September)", "Melbourne (19 , 20 & 21 June)",]
+  const cities = ["Sydney (13 , 14 & 15 September) ", "Brisbane (17 & 18 September)", "Melbourne (19 , 20 & 21 September)",]
 
   const timeSlots = [
     { value: "morning", label: "Morning (10am-1pm)" },

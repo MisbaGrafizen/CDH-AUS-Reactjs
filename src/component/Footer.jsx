@@ -66,6 +66,7 @@ export default function Footer() {
 
   const [errors, setErrors] = useState({})
 
+
   const treatments = [
     "Dental Implants",
     "All on 4/All on 6 Implants",
@@ -77,7 +78,7 @@ export default function Footer() {
     "Others",
   ]
 
-  const cities = ["Sydney (13 , 14 & 15 September) ", "Brisbane (17 & 18 September)", "Melbourne (19 , 20 & 21 June)",]
+  const cities = ["Sydney (13 , 14 & 15 September) ", "Brisbane (17 & 18 September)", "Melbourne (19 , 20 & 21 September)",]
 
   const timeSlots = [
     { value: "morning", label: "Morning (10am-1pm)" },
@@ -673,7 +674,7 @@ export default function Footer() {
                              value={formData.phone}
                              onChange={(e) => {
                                const input = e.target.value;
-                               if (/^\d{0,10}$/.test(input)) {
+                               if (/^\d{0,9}$/.test(input)) {
                                  setFormData((prev) => ({
                                    ...prev,
                                    phone: input,
