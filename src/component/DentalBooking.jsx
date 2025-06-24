@@ -5,23 +5,23 @@ import { MapPin, Phone, User, ChevronDown, Calendar, Clock } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function DentalBooking() {
- const [phone, setPhone] = useState("");
-  const [error, setError] = useState("");
-  const validatePhone = (value) => {
-    const onlyTenDigits = /^[0-9]{10}$/;
-    if (!value) return "Phone number is required.";
-    if (!onlyTenDigits.test(value)) return "Phone number must be exactly 10 digits.";
-    return "";
-  };
+    const [phone, setPhone] = useState("");
+    const [error, setError] = useState("");
+    const validatePhone = (value) => {
+        const onlyTenDigits = /^[0-9]{10}$/;
+        if (!value) return "Phone number is required.";
+        if (!onlyTenDigits.test(value)) return "Phone number must be exactly 10 digits.";
+        return "";
+    };
 
-  const handleChange = (e) => {
-    const value = e.target.value;
+    const handleChange = (e) => {
+        const value = e.target.value;
 
-    // Allow only digits and limit to 10 characters
-    if (/^\d{0,9}$/.test(value)) {
-      setPhone(value);
-    }
-  };
+        // Allow only digits and limit to 10 characters
+        if (/^\d{0,9}$/.test(value)) {
+            setPhone(value);
+        }
+    };
 
     const treatments = [
         "Dental Implants",
@@ -31,7 +31,7 @@ export default function DentalBooking() {
         "Veneers",
         "Zirconium Crown",
         "Bollywood Smile",
-     
+
         "Others",
     ]
 
@@ -39,7 +39,7 @@ export default function DentalBooking() {
         "Sydney (13, 14 & 15 September)",
         "Brisbane (17 & 18 September)",
         "Melbourne (19, 20 & 21 September)",
-  
+
     ]
 
     const [treatment, setTreatment] = useState("");
@@ -85,15 +85,18 @@ export default function DentalBooking() {
                         <div className="bg-white rounded-xl border p-3 shadow-md  border-gray-200 overflow-hidden relative">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full -translate-y-16 translate-x-16"></div>
                             <div className="relative z-10">
-                                <div className="text-center mb-2">
-                                    <div className="w-14 h-15 p-[10px] mx-auto mb-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                                        <span className="text-2xl">🦷</span>
+                                <div className=" flex   gap-[16px] mb-2">
+                                    <div className="w-[45px] flex-shrink-0  h-[45px] p-[7px] mx-auto mb-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-[10px] flex items-center justify-center shadow-lg">
+                                        <span className="text-xl">🦷</span>
                                     </div>
-                                    <h2 className="text-xl font-[600] text-gray-900 mb-2">Perfect Smile Awaits</h2>
-                                    <p className="text-[12px] text-gray-600 w-[80%] mx-auto leading-relaxed">
-                                        Experience world-class dental care with our team of expert dentists. From routine check-ups to
-                                        complete smile makeovers, we're here to give you the confidence to smile brightly.
-                                    </p>
+                                    <div className=" flex flex-col gap-[6px]">
+                                        <h2 className="text-xl font-[600] text-gray-900">Perfect Smile Awaits</h2>
+                                        <p className="text-[12px] text-gray-600  leading-[17px]">
+                                            Experience world-class dental care with our team of expert dentists. From routine check-ups to
+                                            complete smile makeovers, we're here to give you the confidence to smile brightly.
+                                        </p>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -269,31 +272,31 @@ export default function DentalBooking() {
                                 </div>
 
                                 {/* Phone */}
-                             <div className="space-y-2">
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-          <Phone className="w-5 h-5 text-gray-400" />
-        </div>
+                                <div className="space-y-2">
+                                    <div className="relative">
+                                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <Phone className="w-5 h-5 text-gray-400" />
+                                        </div>
 
-        {/* Country Code */}
-        <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-10">
-          <div className="text-[15px] font-[400] px-1 py-[2px] rounded-md bg-transparent text-gray-800 w-[40px] text-center">
-            +61
-          </div>
-        </div>
+                                        {/* Country Code */}
+                                        <div className="absolute left-8 top-1/2 transform -translate-y-1/2 z-10">
+                                            <div className="text-[15px] font-[400] px-1 py-[2px] rounded-md bg-transparent text-gray-800 w-[40px] text-center">
+                                                +61
+                                            </div>
+                                        </div>
 
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={phone}
-          onChange={handleChange}
-          className={`w-full pl-[74px] text-[15px] p-2.5 border rounded-lg outline-none transition-all `}
-          placeholder="Phone Number"
-        />
-      
-      </div>
-    </div>
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            value={phone}
+                                            onChange={handleChange}
+                                            className={`w-full pl-[74px] text-[15px] p-2.5 border rounded-lg outline-none transition-all `}
+                                            placeholder="Phone Number"
+                                        />
+
+                                    </div>
+                                </div>
 
                                 {/* Your City */}
                                 <div className="space-y-2">
