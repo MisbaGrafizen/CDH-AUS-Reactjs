@@ -10,80 +10,46 @@ export default function ComParison() {
   const [hoveredRow, setHoveredRow] = useState(null)
 
 const treatments = [
-  {
-    id: 1,
-    name: "Single Dental Implant",
-    indiaPrice: "AUD 475 – AUD 760",
-    ausPrice: "AUD 4,000 – AUD 7,000",
-    savings: "≈ 85–90% Savings",
-    savingsPercent: 88,
-  },
+  
+
 
 
   {
     id:2,
-    name: "All-On 4 Dental Implant",
-    indiaPrice: "AUD 6,500 – AUD 7,000",
-    ausPrice: "AUD 19,000",
+    name: "All-On 4  & All-On 6 Dental Implant ",
+    indiaPrice: "$ 7,500 - $ 12,000",
+    ausPrice:  "$ 25,000 – $ 50,000",
     savings: "60–65% Savings",
     savingsPercent: 62,
   },
-  {
-    id: 3,
-    name: "All-On 6 Dental Implant",
-    indiaPrice: "AUD 7,800 – AUD 8,500",
-    ausPrice: "AUD 25,000",
-    savings: "60–65% Savings",
-    savingsPercent: 62,
-  },
+
   {
     id: 4,
     name: "Full Mouth Dental Implant ",
-    indiaPrice: "AUD 7,500 – AUD 9,000",
-    ausPrice: "AUD 27,000+",
+    indiaPrice: "$ 8,000 - $ 13,000 ",
+    ausPrice: "$ 35,500 – $ 60,000",
+    savings: "60–70% Savings",
+    savingsPercent: 65,
+  },
+
+  {
+    id: 3,
+    name: "Single Dental Implant",
+    indiaPrice: "$ 600 – $ 900",
+    ausPrice: "$ 3,500 – $ 5,000 ",
     savings: "60–70% Savings",
     savingsPercent: 65,
   },
   {
-    id: 5,
-    name: "Smile Designing",
-    indiaPrice: "AUD 3,000 – AUD 5,600",
-    ausPrice: "AUD 9,250 – AUD 14,800",
-    savings: "60–70% Savings",
-    savingsPercent: 65,
-  },
-  {
-    id: 6,
-    name: "Smile Makeover",
-    indiaPrice: "AUD 3,000 – AUD 4,500",
-    ausPrice: "AUD 7,400 – AUD 13,000",
-    savings: "60–70% Savings",
-    savingsPercent: 65,
-  },
-  {
-    id: 7,
-    name: "Emax Veneers",
-    indiaPrice: "AUD 660 – AUD 920",
-    ausPrice: "AUD 4,400 – AUD 6,600",
+    id: 4,
+    name: "Smile Makeover / Veneers",
+    indiaPrice: "$ 150 - $ 400 per tooth",
+
+    ausPrice: "$ 1,200 - $ 2,500 per tooth",
     savings: "65–75% Savings",
     savingsPercent: 70,
   },
-  {
-    id: 8,
-    name: "Aligners",
-    indiaPrice: "AUD 55 – AUD 100",
-    ausPrice: "AUD 180 – AUD 260",
-    savings: "60–70% Savings",
-    savingsPercent: 65,
-  },
-  {
-    id: 9,
-    name: "Whitening",
-    indiaPrice: "AUD 150 – AUD 220",
-    ausPrice: "AUD 440 – AUD 740",
-    savings: "60–70% Savings",
-    savingsPercent: 65,
-  },
+
 ];
 
 

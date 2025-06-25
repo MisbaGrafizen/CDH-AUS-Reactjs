@@ -353,13 +353,13 @@ export default function Footer() {
                     Contact Us
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     className="!text-white cursor-pointer border-white border md:text-[15px]  text-[13px] px-4 py-2 rounded-md inline-block mt-2 transition-colors" onClick={() => setIsOpen(true)}
                   >
                     Book Appointment
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

@@ -399,7 +399,7 @@ export default function AlertBanner() {
                             }`}
                           placeholder="Full Name"
                         />
-                        {errors.name && <p className="text-red-500  text-[13px] mt-1">{errors.name}</p>}
+                        {errors.name && <p className="text-red-500 absolute top-[30px]  left-[10px] bg-white text-[13px] mt-1">{errors.name}</p>}
                       </div>
 
                       <div className="relative">
@@ -421,7 +421,7 @@ export default function AlertBanner() {
                           value={formData.phone}
                           onChange={(e) => {
                             const input = e.target.value;
-                            if (/^\d{0,10}$/.test(input)) {
+                            if (/^\d{0,9}$/.test(input)) {
                               setFormData((prev) => ({
                                 ...prev,
                                 phone: input,
@@ -433,7 +433,7 @@ export default function AlertBanner() {
                             }`}
                           placeholder="Phone Number"
                         />
-                        {errors.phone && <p className="text-red-500 text-[13px] mt-1">{errors.phone}</p>}
+                        {errors.phone && <p className="text-red-500 absolute top-[30px]  left-[10px] bg-white text-[13px] mt-1">{errors.phone}</p>}
                       </div>
 
 
@@ -451,7 +451,7 @@ export default function AlertBanner() {
                             }`}
                           placeholder="Email Address"
                         />
-                        {errors.email && <p className="text-red-500 text-[13px] mt-1">{errors.email}</p>}
+                        {errors.email && <p className="text-red-500 absolute top-[30px]  left-[10px] bg-white text-[13px] mt-1">{errors.email}</p>}
                       </div>
 
                       <div className="relative">
@@ -468,7 +468,7 @@ export default function AlertBanner() {
                             }`}
                           placeholder="Your City"
                         />
-                        {errors.userCity && <p className="text-red-500 text-sm mt-1">{errors.userCity}</p>}
+                        {errors.userCity && <p className="text-red-500 absolute top-[30px]  left-[10px] bg-white text-[13px] mt-1">{errors.userCity}</p>}
                       </div>
                     </div>
                   </div>
@@ -909,7 +909,7 @@ export default function AlertBanner() {
                           </label>
                         ))}
                       </div>
-                      <div className="flex gap-[40px] justify-between w-[100%] pt-[190px] mx-auto">
+                      <div className="flex gap-[40px] justify-between w-[100%] pt-[200px] mx-auto">
                         <button onClick={() => setStep(2)} className=" flex gap-[10px]   font-[500] justify-between rounded-md  h-[40px] text-[20px] mx-auto= text-[#ff1616] border-[1.5px] border-[#ff1616] items-center  w-[60%] px-[20px] ">
                           <i className="fa-regular fa-arrow-left"></i>
                           Back
@@ -925,6 +925,52 @@ export default function AlertBanner() {
                   )}
 
                   {step === 4 && (
+                    <div className="animate-fade-in space-y-3">
+                      <div className="flex  gap-2">
+                        <FileText className="w-5 h-5 mt-[px] text-teal-600" />
+                        <h3 className="text-lg font-semibold leading-[22px] text-gray-800">Do you have any dental reports?</h3>
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-2 pl-7">
+                        {["Yes- I will carry them", "No- I need a fresh consultation"].map((option) => (
+                          <label
+                            key={option}
+                            className={`flex items-center gap-3 p-2 border rounded-lg cursor-pointer transition-all ${formData.hasReports === option
+                              ? "border-teal-500 bg-teal-50"
+                              : "border-gray-200 hover:border-teal-200"
+                              }`}
+                          >
+                            <input
+                              type="radio"
+                              name="hasReports"
+                              value={option}
+                              checked={formData.hasReports === option}
+                              onChange={handleInputChange}
+                              className="sr-only"
+                            />
+                            <div
+                              className={`w-5 h-5 rounded-full border flex items-center justify-center ${formData.hasReports === option ? "border-4 border-teal-500" : "border-gray-300"
+                                }`}
+                            ></div>
+                            <span className="text-gray-700 text-[13px]">{option}</span>
+                          </label>
+                        ))}
+                      </div>
+                      <div className="flex gap-[40px] justify-between w-[100%] pt-[230px] mx-auto">
+                        <button onClick={() => setStep(3)} className=" flex gap-[10px]   font-[500] justify-between rounded-md  h-[40px] text-[20px] mx-auto= text-[#ff1616] border-[1.5px] border-[#ff1616] items-center  w-[60%] px-[20px] ">
+                          <i className="fa-regular fa-arrow-left"></i>
+                          Back
+
+                        </button>
+                        <button onClick={() => setStep(5)} className=" flex gap-[10px]   font-[500] justify-between rounded-md  h-[40px] text-[20px] mx-auto CDH-uae text-[#fff] items-center  w-[60%] px-[20px] ">
+                          Next
+                          <i className="fa-regular fa-arrow-right"></i>
+                        </button>
+                      </div>
+
+                    </div>
+                  )}
+                  {step === 5 && (
                     <>
 
 
@@ -971,7 +1017,7 @@ export default function AlertBanner() {
                               value={formData.phone}
                               onChange={(e) => {
                                 const input = e.target.value;
-                                if (/^\d{0,10}$/.test(input)) {
+                                if (/^\d{0,9}$/.test(input)) {
                                   setFormData((prev) => ({
                                     ...prev,
                                     phone: input,
@@ -1022,31 +1068,34 @@ export default function AlertBanner() {
                           </div>
                         </div>
                       </div>
-<div className="pt-[10px]">
+                      <div className="pt-[10px] w-[100%]">
 
 
-                  <button
-                    type="submit"
-                    className=" CDH-uae text-white mt-[90px] px-8 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2 w-full md:w-auto justify-center"
-                    onClick={handleSubmit}
-                  >
-                    <span>Book Your Consultation</span>
-                    <Check className="w-5 h-5" />
-                  </button>
-                  </div>
+                        <div className="flex gap-[40px] justify-between w-[100%] pt-[80px] mx-auto">
+                          <button onClick={() => setStep(4)} className=" flex gap-[10px]   font-[500] justify-between rounded-md  h-[40px] text-[20px] mx-auto= text-[#ff1616] border-[1.5px] border-[#ff1616] items-center  w-[60%] px-[20px] ">
+                            <i className="fa-regular fa-arrow-left"></i>
+                            Back
+
+                          </button>
+                          <button onClick={handleSubmit} className=" flex gap-[10px]   font-[600] justify-center rounded-md  h-[40px] text-[20px] mx-auto CDH-uae text-[#fff] items-center  w-[60%] px-[20px] ">
+
+                            Submit
+                          </button>
+                        </div>
+                      </div>
                     </>
                   )}
                 </div>
 
- 
+
               </div>
 
               {/* Submit Button */}
               <div className="md:mt-  md:mb-[0px] pb-[29px] md:flex hidden justify-center">
                 <button
                   type="submit"
-                  className=" CDH-uae text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2 w-full md:w-auto justify-center"
-                  onClick={handleSubmit}
+                  className=" CDH-uae text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2 w-full md:w-auto justify-center" onClick={handleSubmit}
+
                 >
                   <span>Book Your Consultation</span>
                   <Check className="w-5 h-5" />
