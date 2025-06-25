@@ -527,7 +527,7 @@ export default function AlertBanner() {
               </button>
             </div>
 
-            <div className="p-6 w-[100%] h-[500px] mt-[50px] min-h-[270px] ">
+            <div className="p-6 w-[100%] h-[500px] mt-[30px] min-h-[270px] ">
               <div className="grid grid-cols-1 h-[100%] md:grid-cols-2 gap-6 w-[100%]">
                 {/* Left Column */}
                 {/* <div className="space-y-6 md:pt-0 pt-[20px]">
@@ -795,7 +795,7 @@ export default function AlertBanner() {
                         {treatments.map((treatment) => (
                           <label
                             key={treatment}
-                            className={`flex items-center gap-3 p-2 border rounded-lg cursor-pointer transition-all ${formData.treatment.includes(treatment)
+                            className={`flex items-center gap-3 p-[7px] border rounded-lg cursor-pointer transition-all ${formData.treatment.includes(treatment)
                               ? "border-teal-500 bg-teal-50"
                               : "border-gray-200 hover:border-teal-200"
                               }`}
@@ -822,7 +822,7 @@ export default function AlertBanner() {
                       </div>
                       {/* {errors.treatment && <p className="text-red-500 text-sm pl-7">{errors.treatment}</p>} */}
 
-                      <button onClick={() => setStep(2)} className=" flex gap-[10px]  mt-[30px]  font-[500] justify-between rounded-md  h-[40px] text-[20px] mx-auto CDH-uae text-[#fff] items-center  w-[60%] px-[20px] ">
+                      <button onClick={() => setStep(2)} className=" flex gap-[10px]  mt-[40px]  font-[500] justify-between rounded-md  h-[40px] text-[20px] mx-auto CDH-uae text-[#fff] items-center  w-[60%] px-[20px] ">
                         Next
                         <i className="fa-regular fa-arrow-right"></i>
                       </button>
@@ -934,7 +934,7 @@ export default function AlertBanner() {
                           <h3 className="text-lg font-semibold text-gray-800">Your Contact Information</h3>
                         </div>
 
-                        <div className="space-y-3 pl-7">
+                        <div className="space-y-3 pt-[10px]">
                           <div className="relative">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                               <User className="w-4 h-4 text-gray-400" />
@@ -1022,22 +1022,23 @@ export default function AlertBanner() {
                           </div>
                         </div>
                       </div>
-                    </>
-                  )}
-                </div>
-
-                {/* <div className=" flex md:hidden w-[100%] pb-[20px]">
+<div className="pt-[10px]">
 
 
                   <button
                     type="submit"
-                    className=" CDH-uae text-white my-[10px] px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2 w-full md:w-auto justify-center"
+                    className=" CDH-uae text-white mt-[90px] px-8 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2 w-full md:w-auto justify-center"
                     onClick={handleSubmit}
                   >
                     <span>Book Your Consultation</span>
                     <Check className="w-5 h-5" />
                   </button>
-                </div> */}
+                  </div>
+                    </>
+                  )}
+                </div>
+
+ 
               </div>
 
               {/* Submit Button */}
