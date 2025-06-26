@@ -7,10 +7,8 @@ import axios from "axios";
 
 export default function AlertBanner() {
   const [datainputModal, setDatainputModal] = useState(false);
-  const [nameFocused, setNameFocused] = useState(false);
-  const [PhoneFocused, setPhoneFocused] = useState(false);
-  const [EmailFocused, setEmailFocused] = useState(false);
-  const [cityFocused, setCityFocused] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
 
   const [step, setStep] = useState(1);
   const dataModalOpen = () => {
@@ -46,15 +44,16 @@ export default function AlertBanner() {
   // };
 
   const [isOpen, setIsOpen] = useState(false)
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    city: '',
-    userCity: '',
+    const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    userCity: "",
+    city: "",
     treatment: [],
-    hasReports: '',
-    timeSlot: '',
+    hasReports: "",
+    timeSlot: "",
+    countryCode: "+61",
   });
 
   const [errors, setErrors] = useState({})
@@ -112,7 +111,7 @@ export default function AlertBanner() {
   const validate = () => {
     let tempErrors = {};
     if (!formData.name) tempErrors.name = 'Name is required';
-    if (!formData.phone || formData.phone.length !== 10) tempErrors.phone = 'Valid phone is required';
+    if (!formData.phone || formData.phone.length !== 9) tempErrors.phone = 'Valid phone is required';
     if (!formData.email) tempErrors.email = 'Email is required';
     if (!formData.city) tempErrors.city = 'Select a city';
     if (!formData.treatment.length) tempErrors.treatment = 'Choose at least one treatment';
@@ -124,11 +123,13 @@ export default function AlertBanner() {
   };
 
   const handleSubmit = async (e) => {
+    
     e.preventDefault();
     if (!validate()) return;
+    setIsSubmitting(true);
 
     try {
-      const res = await axios.post("https://server.grafizen.com/api/v2/cdh/admin/appointment", formData);
+      const res = await axios.post("https://server.grafizen.in/api/v2/cdh/admin/appointment", formData);
       alert("Consultation booked successfully!");
       setFormData({
         name: '',
@@ -143,8 +144,11 @@ export default function AlertBanner() {
       setIsOpen(false);
     } catch (err) {
       alert("Error booking consultation. Try again.");
-    }
-  };
+    } finally {
+    setIsSubmitting(false); 
+  }
+};
+
 
   // Close modal when clicking outside
   useEffect(() => {
@@ -200,14 +204,8 @@ export default function AlertBanner() {
         </div>
       </div>
 
-
-
-
-
-
-
-
       {isOpen && (
+
         <div className="fixed font-Poppins inset-0 z-50 flex items-center justify-center modal-overlay bg-black/50 backdrop-blur-sm p-4">
           <div className="bg-white w-full  max-w-3xl rounded-2xl md:flex  hidden overflow-hidden  shadow-2xl  max-h-[600px] overflow-y-auto relative animate-fadeIn">
             {/* Close button */}
@@ -409,7 +407,7 @@ export default function AlertBanner() {
 
                         {/* Static Country Code Display */}
                         <div className="absolute left-9 top-1/2 transform -translate-y-1/2 z-10">
-                          <div className="text-[16px] font-[400] px-2 py-[2px] rounded-md bg-white text-gray-800 w-[50px] text-center">
+                          <div className="text-[16px] font-[400] px-2 py-[2px] rounded-md bg-transparent text-gray-800 w-[50px] text-center">
                             +61
                           </div>
                         </div>
@@ -425,7 +423,7 @@ export default function AlertBanner() {
                               setFormData((prev) => ({
                                 ...prev,
                                 phone: input,
-                                countryCode: '+61', // ✅ enforce +971
+                                countryCode: '+61',
                               }));
                             }
                           }}
@@ -481,7 +479,7 @@ export default function AlertBanner() {
                     className=" CDH-uae text-white my-[10px] px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2 w-full md:w-auto justify-center"
                     onClick={handleSubmit}
                   >
-                    <span>Book Your Consultation</span>
+                    {isSubmitting ? "Submitting..." : "Book Your Consultation"}
                     <Check className="w-5 h-5" />
                   </button>
                 </div>
@@ -494,24 +492,12 @@ export default function AlertBanner() {
                   className=" CDH-uae text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 flex items-center gap-2 w-full md:w-auto justify-center"
                   onClick={handleSubmit}
                 >
-                  <span>Book Your Consultation</span>
+                  {isSubmitting ? "Submitting..." : "Book Your Consultation"}
                   <Check className="w-5 h-5" />
                 </button>
               </div>
             </div>
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
           <div className="bg-white w-full  max-w-3xl rounded-2xl flex  md:hidden overflow-hidden  shadow-2xl  max-h-[600px] overflow-y-auto relative animate-fadeIn">
 

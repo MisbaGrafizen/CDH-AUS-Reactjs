@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react"
 import { MapPin, Phone, User, ChevronDown, Calendar, Clock } from "lucide-react"
 
 import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
 
 export default function DentalBooking() {
     const [phone, setPhone] = useState("");
@@ -14,14 +15,70 @@ export default function DentalBooking() {
         return "";
     };
 
-    const handleChange = (e) => {
-        const value = e.target.value;
+    const [formData, setFormData] = useState({
+        treatment: "",
+        city: "",
+        name: "",
+        phone: "",
+        userCity: "",
+        countryCode: "+61",
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-        // Allow only digits and limit to 10 characters
-        if (/^\d{0,9}$/.test(value)) {
-            setPhone(value);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        if (name === "phone") {
+            if (/^\d{0,9}$/.test(value)) {
+                setFormData((prev) => ({ ...prev, [name]: value }));
+            }
+        } else {
+            setFormData((prev) => ({ ...prev, [name]: value }));
         }
     };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (!formData.phone || formData.phone.length !== 9) {
+            alert("Phone number must be 9 digits");
+            return;
+        }
+
+        if (!formData.treatment || !formData.city || !formData.name || !formData.userCity) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        setIsSubmitting(true);
+        try {
+            const payload = {
+                treatment: [formData.treatment],
+                city: formData.city,
+                name: formData.name,
+                phone: formData.phone,
+                userCity: formData.userCity,
+                countryCode: formData.countryCode,
+            };
+
+            await axios.post("https://server.grafizen.in/api/v2/cdh/admin/appointment", payload);
+
+            alert("Consultation booked successfully!");
+            setFormData({
+                treatment: "",
+                city: "",
+                name: "",
+                phone: "",
+                userCity: "",
+                countryCode: "+61",
+            });
+        } catch (err) {
+            console.error("Submission error:", err);
+            alert("Failed to submit consultation. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
 
     const treatments = [
         "Dental Implants",
@@ -173,8 +230,8 @@ export default function DentalBooking() {
                                             onClick={() => setOpen(!open)}
                                             className="w-full px-4 py-2 border border-gray-300  text-[15px] rounded-lg flex justify-between items-center text-left focus:ring-[0px] focus:ring-teal-500 focus:border-teal-500 outline-none transition-all"
                                         >
-                                            <span className={treatment ? "text-black" : "text-gray-400"}>
-                                                {treatment || "Select Treatment"}
+                                            <span className={formData?.treatment ? "text-black" : "text-gray-400"}>
+                                                {formData?.treatment || "Select Treatment"}
                                             </span>
                                             <motion.div animate={{ rotate: open ? 180 : 0 }}>
                                                 <ChevronDown className="h-5 w-5 text-gray-500" />
@@ -195,7 +252,7 @@ export default function DentalBooking() {
                                                             <button
                                                                 type="button"
                                                                 onClick={() => {
-                                                                    setTreatment(item);
+                                                                    setFormData((prev) => ({ ...prev, treatment: item }));
                                                                     setOpen(false);
                                                                 }}
                                                                 className={`w-full text-left text-[15px] px-4 py-2 text-sm hover:bg-gray-100 ${treatment === item ? "bg-gray-100 font-medium" : ""
@@ -218,8 +275,8 @@ export default function DentalBooking() {
                                             onClick={() => setOpencity(!openCity)}
                                             className="w-full px-4 py-2 border border-gray-300 text-[15px] focus:ring-[0px] focus:ring-teal-500 focus:border-teal-500 outline-none transition-all rounded-lg flex justify-between items-center text-left"
                                         >
-                                            <span className={city ? "text-black" : "text-gray-400"}>
-                                                {city || "Select City & Date"}
+                                            <span className={formData?.city ? "text-black" : "text-gray-400"}>
+                                                {formData?.city || "Select City & Date"}
                                             </span>
                                             <motion.div animate={{ rotate: openCity ? 180 : 0 }}>
                                                 <ChevronDown className="h-5 w-5 text-gray-500" />
@@ -240,7 +297,7 @@ export default function DentalBooking() {
                                                             <button
                                                                 type="button"
                                                                 onClick={() => {
-                                                                    setCity(item);
+                                                                    setFormData((prev) => ({ ...prev, city: item }));
                                                                     setOpencity(false);
                                                                 }}
                                                                 className={`w-full text-left px-4 py-2 text-[14px] hover:bg-gray-100 ${city === item ? "bg-gray-100 font-medium" : ""
@@ -263,7 +320,9 @@ export default function DentalBooking() {
                                         <User className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                                         <input
                                             type="text"
-
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
                                             placeholder="Enter your full name"
                                             className="w-full text-[15px] pl-[44px] p-2.5 border rounded-lg focus:ring-[0px] focus:ring-teal-500 focus:border-teal-500 outline-none transition-all border-gray-300"
 
@@ -289,7 +348,7 @@ export default function DentalBooking() {
                                             type="tel"
                                             id="phone"
                                             name="phone"
-                                            value={phone}
+                                            value={formData.phone}
                                             onChange={handleChange}
                                             className={`w-full pl-[74px] text-[15px] p-2.5 border rounded-lg outline-none transition-all `}
                                             placeholder="Phone Number"
@@ -305,7 +364,9 @@ export default function DentalBooking() {
                                         <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                                         <input
                                             type="text"
-
+                                            name="userCity"
+                                            value={formData.userCity}
+                                            onChange={handleChange}
                                             placeholder="Enter your current city"
                                             className="w-full pl-[44px] p-2.5 border rounded-lg focus:ring-[0px] focus:ring-teal-500 focus:border-teal-500 outline-none transition-all border-gray-300"
 
@@ -315,13 +376,14 @@ export default function DentalBooking() {
 
                                 {/* Submit Button */}
                                 <button
-
+                                    onClick={handleSubmit}
                                     className="w-full py-2 text-white font-[600] text-lg rounded-[10px] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                                     style={{
                                         background: "linear-gradient(130deg, #ff0000, #00008B)",
                                     }}
                                 >
-                                    Book My Free Consultation
+                                    {isSubmitting ? "Submitting..." : "Book My Free Consultation"}
+
                                 </button>
 
                                 <div className="text-center">
