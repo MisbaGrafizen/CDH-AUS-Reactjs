@@ -8,6 +8,38 @@ import india from "../../public/uk/india.jpg"
 export default function ComParison() {
 
   const [hoveredRow, setHoveredRow] = useState(null)
+    const [selectedTreatment, setSelectedTreatment] = useState(0)
+
+  const treatmentsr = [
+    {
+      name: "All-On 4 & All-On 6 Dental Implant",
+      shortName: "All-On 4 & 6",
+      indiaPrice: "$ 7,500 - $ 12,000",
+      ausPrice: "$ 25,000 - $ 50,000",
+      savings: "60-65% Savings",
+    },
+    {
+      name: "Full Mouth Dental Implant",
+      shortName: "Full Mouth",
+      indiaPrice: "$ 8,000 - $ 13,000",
+      ausPrice: "$ 35,500 - $ 60,000",
+      savings: "60-70% Savings",
+    },
+    {
+      name: "Single Dental Implant",
+      shortName: "Single Implant",
+      indiaPrice: "$ 600 - $ 900",
+      ausPrice: "$ 3,500 - $ 5,000",
+      savings: "60-70% Savings",
+    },
+    {
+      name: "Smile Makeover / Veneers",
+      shortName: "Veneers",
+      indiaPrice: "$ 150 - $ 400 per tooth",
+      ausPrice: "$ 1,200 - $ 2,500 per tooth",
+      savings: "65-75% Savings",
+    },
+  ]
 
 const treatments = [
   
@@ -69,7 +101,7 @@ const treatments = [
 
 
 
-     <div className=" md:overflow-hidden overflow-x-auto  rounded-[10px] shadow-lg">
+     <div className=" md:overflow-hidden overflow-x-auto md:block hidden  rounded-[10px] shadow-lg">
           <table className="w-full min-w-[1000px] border-collapse border  ">
             {/* Table Header */}
             <thead>
@@ -150,6 +182,93 @@ const treatments = [
             </tbody>
           </table>
         </div>
+
+              <div className="md:hidden">
+
+        {/* Mobile Treatment Tabs */}
+        <div className="bg-white border-b overflow-x-auto">
+          <div className="flex min-w-max px-4 py-3">
+            {treatmentsr.map((treatment, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedTreatment(index)}
+                className={`px-4 py-2 mx-1 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
+                  selectedTreatment === index
+                    ? "CDH-uae text-white shadow-md"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                }`}
+              >
+                {treatment.shortName}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Treatment Details */}
+        <div className="p-4">
+          <div className="bg-white rounded-xl shadow-sm p-4 mb-4">
+            <h2 className="text-lg font-semibold text-gray-800 mb-2">{treatmentsr[selectedTreatment].name}</h2>
+          </div>
+
+          {/* Mobile Cost Cards */}
+          <div className="space-y-4">
+            {/* India Cost Card */}
+            <div className="bg-orange-50 border-2 border-orange-200 rounded-xl p-4">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-b from-orange-500 via-white to-green-600"></div>
+                <h3 className="text-lg font-semibold text-orange-800">Cost in India</h3>
+              </div>
+              <p className="text-2xl font-bold text-orange-700">{treatmentsr[selectedTreatment].indiaPrice}</p>
+            </div>
+
+            {/* AUS Cost Card */}
+            <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-800 via-white to-red-600"></div>
+                <h3 className="text-lg font-semibold text-blue-800">AUS Cost</h3>
+              </div>
+              <p className="text-2xl font-bold text-blue-700">{treatmentsr[selectedTreatment].ausPrice}</p>
+            </div>
+
+            {/* Savings Card */}
+            <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4">
+              <h3 className="text-lg font-semibold text-green-800 mb-3">Approx Savings</h3>
+              <p className="text-2xl font-bold text-green-700">{treatmentsr[selectedTreatment].savings}</p>
+              <div className="mt-3 bg-green-200 rounded-full h-2">
+                <div
+                  className="bg-green-600 h-2 rounded-full transition-all duration-500"
+                  style={{ width: `${Number.parseInt(treatments[selectedTreatment].savings)}%` }}
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Quick Comparison */}
+        <div className="p-4">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Comparison</h3>
+          <div className="bg-white rounded-xl  border shadow-sm overflow-hidden">
+            {treatmentsr.map((treatment, index) => (
+              <div
+                key={index}
+                onClick={() => setSelectedTreatment(index)}
+                className={`p-4 border-b border-gray-100 cursor-pointer transition-all ${
+                  selectedTreatment === index ? "bg-blue-50 border-l-4 border-l-blue-600" : "hover:bg-gray-50"
+                }`}
+              >
+                <h4 className="font-semibold text-gray-800 mb-2">{treatment.shortName}</h4>
+                <div className="flex justify-between items-center text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-b from-orange-500 via-white to-green-600"></div>
+                    <span className="text-orange-700 font-medium">{treatment.indiaPrice}</span>
+                  </div>
+                  <div className="text-green-700 font-semibold">{treatment.savings}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

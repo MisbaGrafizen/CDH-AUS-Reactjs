@@ -17,7 +17,7 @@ export default function ListOfAppoinments() {
             dates: "17 & 18 September",
             location: "Brisbane",
             venue: "10am to 6pm",
-           
+
         },
         {
             id: 3,
@@ -26,7 +26,7 @@ export default function ListOfAppoinments() {
             venue: "10am to 6pm",
             // mapUrl: "https://maps.google.com/?q=Sharjah",
         },
- 
+
     ];
 
     const toggleMobileRow = (id) => {
@@ -67,7 +67,7 @@ export default function ListOfAppoinments() {
                 </table>
             </div> */}
 
-            {/* Mobile Cards */}
+
             <div className=" space-y-4">
                 {events.map((event) => (
                     <div key={event.id} className="bg-white border border-[#ff151547] rounded-lg shadow overflow-hidden">
@@ -94,16 +94,32 @@ export default function ListOfAppoinments() {
                                     <div className="text-xs text-gray-500">Location</div>
                                     <div className="text-gray-700">{event.location}</div>
                                 </div>
+                                  <div className=' flex justify-between'>
                                 <div>
+
+
                                     <div className="text-xs text-gray-500">Timings</div>
                                     <div className="text-gray-700">{event.venue}</div>
                                 </div>
-                             
+
+
+                                <a
+                                    href="tel:+917226066324"
+                                        style={{
+                                        background: "linear-gradient(130deg, #ff0000, #00008B)",
+                                    }}
+                                    className=" px-4   justify-center items-center flex h-[35px] text-sm font-semibold text-white bg-[#ab2929] hover:bg-[#911f1f] rounded-[9px] transition"
+                                >
+Call Now    
+                                </a>
+
+                              
+                                </div>
+   </div>
                             </div>
                         </div>
-                    </div>
                 ))}
-            </div>
+                    </div>
         </div>
-    );
+            );
 }

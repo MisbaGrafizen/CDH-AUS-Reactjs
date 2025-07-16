@@ -10,11 +10,12 @@ import UpToOffer from "../../component/UpToOffer";
 import IntroDuction from "../../component/IntroDuction";
 import ComParison from "../../component/ComParison";
 import WhyChooseUs from "../../component/WhyChooseUs";
-import Testimonials from "../../component/Testimonials";
+import Testimonials from '../../component/Testimonials'
 import AlertBanner from "../../component/AlertBanner";
 import Footer from "../../component/Footer";
 import ListOfAppoinments from "../../component/listOfAppoinments";
 import DentalBooking from "../../component/DentalBooking";
+import Faqs from "../../component/Faqs";
 
 export default function Home() {
 
@@ -32,7 +33,10 @@ export default function Home() {
                 <ComParison />
                 <WhyChooseUs />
                 <ListOfAppoinments />
-                {/* <Testimonials /> */}
+            </section>
+            <section className="  font-Poppins flex flex-col   w-[90%] md:w-[80%]   2xl:w-[1200px] pt-[70px]  gap-[30px] h-[100%] mx-auto">
+                <Faqs />
+                <Testimonials />
                 <AlertBanner />
             </section>
             <Footer />

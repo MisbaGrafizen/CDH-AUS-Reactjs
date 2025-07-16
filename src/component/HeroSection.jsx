@@ -166,11 +166,8 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-4"
             >
-              <p className="text-[16px] md:text-[18px] w-fit  text-center justify-center mx-auto  text-gray-700 leading-[20px] md:leading-relaxed">
-                Are you looking for <span className="font-semibold   pr-[6px] CDH-gradiant">affordable, world-class    dental treatment</span>
-      
-            
-                 ?
+              <p className="text-[16px] md:text-[18px] w-fit max-w-[800px] text-center font-[500] justify-center mx-auto  text-gray-700 leading-[20px] md:leading-tight">
+            “Your Trusted ‘’World Famous’’Dental Team from India Is Coming to Australia – Meet Us in Sydney Brisbane & Melbourne This September!”
               </p>
 
               <p className="text-gray-600 text-center text-[13px]">
