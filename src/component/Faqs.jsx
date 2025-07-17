@@ -6,21 +6,34 @@ export default function Faqs() {
 const faqs = [
   {
     question: "Will my consultation be free?",
-    answer: "✅ Yes, the consultation is 100% free.\nDuring the meetup, you’ll receive a one-on-one discussion with Dr. Anand Jasani and Team City Dental regarding your dental concerns, treatment options, and cost-saving possibilities in India."
+    answer: "Yes, the consultation is 100% free.\nDuring the meetup, you’ll receive a one-on-one discussion with Dr. Anand Jasani and Team City Dental regarding your dental concerns, treatment options, and cost-saving possibilities in India."
   },
   {
     question: "Can I book my surgery in India after this meetup?",
-    answer: "✅ Absolutely.\nOur team will give you a complete treatment plan and quote during the meetup. If you’re ready, you can pre-book your India surgery dates directly with us—saving both your time and travel coordination. We will also assist with:\n• Travel planning\n• Airport pickup\n• Accommodation options\n• Day-by-day itinerary for your dental care in India"
+    answer: "Absolutely.\nOur team will give you a complete treatment plan and quote during the meetup. If you’re ready, you can pre-book your India surgery dates directly with us—saving both your time and travel coordination. We will also assist with:\n• Travel planning\n• Airport pickup\n• Accommodation options\n• Day-by-day itinerary for your dental care in India"
   },
   {
     question: "What documents should I bring?",
-    answer: "📑 We recommend you bring:\n• Any recent X-rays or scans\n• Dental reports or prescriptions (if any)\n• Photos (if you’ve had cosmetic concerns)\n• A list of your current medications (if applicable)\n\nDon’t worry if you don’t have anything—our team will guide you based on your clinical exam too."
+    answer: "We recommend you bring:\n• Any recent X-rays or scans\n• Dental reports or prescriptions (if any)\n• Photos (if you’ve had cosmetic concerns)\n• A list of your current medications (if applicable)\n\nDon’t worry if you don’t have anything—our team will guide you based on your clinical exam too."
   },
   {
     question: "How long is each appointment?",
-    answer: "🕒 Each consultation will last around 15–20 minutes.\nYou will have dedicated time to:\n• Explain your dental issue\n• Review possible treatments\n• Understand expected costs, timeframes, and savings\n• Ask any questions freely\n\n✅ You are not rushed. This is a personalised, private one-on-one meetup with full attention to your needs."
-  }
+    answer: " Each consultation will last around 15–20 minutes.\nYou will have dedicated time to:\n• Explain your dental issue\n• Review possible treatments\n• Understand expected costs, timeframes, and savings\n• Ask any questions freely\n\n You are not rushed. This is a personalised, private one-on-one meetup with full attention to your needs."
+  },
+    {
+    question: "Will the implants last as long as in Australia? ",
+    answer: "  Absolutely. We use the same FDA-approved brands and follow global sterilization protocols."
+  },    {
+    question: " Can I finish treatment in one visit?",
+    answer: " Most patients complete it in 5–7 days. A second visit is optional for crowns."
+  },
+
+   {
+    question: " Is Rajkot safe and travel-friendly?",
+    answer: "Yes, it’s peaceful, affordable, and we assist you with everything from pickup to stay."
+  },
 ];
+
 
 
 
@@ -33,25 +46,19 @@ const faqs = [
     <div className="md:w-[100%] w-[95%] pb-[50px]  px-[10px] flex flex-col gap-[30px]  mx-auto">
       <div className="w-[100%] flex flex-col md:gap-[10px]">
       <div className="flex flex-col">
-          <h1 className="flex font-[600] text-[35px] font-Poppins">
-          Frequently Asked <span className=" CDH-gradiant font-[700] pl-[10px]"> Questions</span>
+          <h1 className=" font-[600] text-[35px] font-Poppins">
+          Frequently Asked <b className=" CDH-gradiant font-[700] md:pl-[10px]"> Questions</b>
           </h1>
    
         </div>
 
         <div className="flex w-[100%] gap-[30px] mt-[20px] flex-col justify-between">
           <div className="w-[100%] flex md:flex-row flex-col justify-between">
-            <div className="md:w-[30%]  ">
-              <img
-                className=" w-[100%] md:h-[300px]  rounded-[10px]  shadow-md"
-                src={faq}
-                alt="FAQ"
-              />
-            </div>
+    
 
 
 
-            <div className="flex flex-col   gap-[20px] md:mt-[0px] mt-[30px] md:w-[65%]">
+            <div className="  grid md:grid-cols-2 gap-[20px] md:mt-[0px] mt-[30px] md:w-[100%]">
               {faqs.map((faq, index) => (
                 <div
                   key={index}

@@ -167,13 +167,13 @@ export default function HeroSection() {
               className="space-y-4"
             >
               <p className="text-[16px] md:text-[18px] w-fit max-w-[800px] text-center font-[500] justify-center mx-auto  text-gray-700 leading-[20px] md:leading-tight">
-            “Your Trusted ‘’World Famous’’Dental Team from India Is Coming to Australia – Meet Us in Sydney Brisbane & Melbourne This September!”
+            “Your Trusted ‘’World Famous’’Dental Team from India Is Coming to Australia – <b className=" font-[5600] CDH-gradiant">Meet Us in Sydney Brisbane & Melbourne This September!”</b>
               </p>
 
-              <p className="text-gray-600 text-center text-[13px]">
+              {/* <p className="text-gray-600 text-center text-[13px]">
                 Save up to 70% on premium dental procedures while experiencing the best of Indian hospitality and
                 world-class medical facilities.
-              </p>
+              </p> */}
                     <div className="relative">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}

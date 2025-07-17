@@ -16,6 +16,7 @@ import Footer from "../../component/Footer";
 import ListOfAppoinments from "../../component/listOfAppoinments";
 import DentalBooking from "../../component/DentalBooking";
 import Faqs from "../../component/Faqs";
+import NriComponent from "../../component/NriComponent";
 
 export default function Home() {
 
@@ -37,6 +38,7 @@ export default function Home() {
             <section className="  font-Poppins flex flex-col   w-[90%] md:w-[80%]   2xl:w-[1200px] pt-[70px]  gap-[30px] h-[100%] mx-auto">
                 <Faqs />
                 <Testimonials />
+                <NriComponent />
                 <AlertBanner />
             </section>
             <Footer />
