@@ -82,7 +82,7 @@ export default function DentalBooking() {
 
     const treatments = [
         "Dental Implants",
-        "All on 4/All on 6 Implants",
+        "All on 4 / 6 Dental Implants",
         "Full Mouth Dental Implants",
         "Smile Designing",
         "Veneers",
@@ -185,7 +185,7 @@ export default function DentalBooking() {
                                 </div>
 
                                 <p className="text-gray-600 text-[13px] leading-[18px] text-jus">
-                                    Board-certified dental professionals with 100+ years of combined experience in cosmetic and restorative
+                                    Board-certified dental professionals with 125+ years of combined experience in cosmetic and restorative
                                     dentistry.
                                 </p>
                             </div>
@@ -203,7 +203,7 @@ export default function DentalBooking() {
                                     <div className="md:text-sm text-[11px] text-gray-600">international patients </div>
                                 </div>
                                 <div>
-                                    <div className="md:text-[30px] text-[25px] font-[700] text-purple-600 mb-1">100+</div>
+                                    <div className="md:text-[30px] text-[25px] font-[700] text-purple-600 mb-1">125+</div>
                                     <div className="md:text-sm text-[11px] text-gray-600">years of combined experience</div>
                                 </div>
                             </div>

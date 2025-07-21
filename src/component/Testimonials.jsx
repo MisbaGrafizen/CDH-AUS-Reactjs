@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
+import beven from "../../public/testimonials/Beven-Hynes.png"
+import Kerry from "../../public/testimonials/Kerry-Scandolera.png"
+import Scurrah from "../../public/testimonials/Grant-Scurrah.png"
+import Heary from "../../public/testimonials/George-Heary.png"
+
 
 // import logo from "../../../public/logo-black.avif"
 
@@ -11,18 +16,20 @@ const testimonials = [
     name: "Kerry Scandolera",
     role: "All-on-4 Dental Implants",
     company: "City Dental Hospital",
-    image: "https://ui-avatars.com/api/?name=Kerry+Scandolera&background=062f95&color=fff",
+    image: Kerry,
     text: "I found City Dental Hospital online while searching for All-on-4 Dental Implants experts. Not only did I get exceptional treatment, but I also had the chance to explore the beautiful city of Rajkot. The clinic, the care, and the city truly exceeded my expectations!",
     location: "Sunbury, Australia",
+    number:"+61 420370012"
   },
   {
     id: 2,
     name: "Grant Scurrah",
     role: "Full Mouth Rehabilitation",
     company: "City Dental Hospital",
-    image: "https://ui-avatars.com/api/?name=Grant+Scurrah&background=062f95&color=fff",
+    image: Scurrah,
     text: "Sitting in Gold Coast, I never thought a website would lead me to such a life-changing experience. I chose City Dental Hospital for my Full Mouth Rehabilitation, and it turned out to be the best decision. They gave me not just new teeth, but a reason to smile again. 15 days in India — and a lifetime of confidence!",
     location: "Gold Coast, Australia",
+    number:"+61 451832544"
   },
   {
     id: 3,
@@ -32,24 +39,27 @@ const testimonials = [
     image: "https://ui-avatars.com/api/?name=Susy+Beven+Hynes&background=062f95&color=fff",
     text: "Our trip from Coraki, Australia to India was meant to be a relaxing vacation, but Beven had something more in mind. After days of exploring, we visited City Dental Hospital in Rajkot for Beven’s Full Mouth Rehabilitation. Watching his smile transform was truly the highlight of our journey!",
     location: "Coraki, Australia",
+    number:"+61 401576564"
   },
   {
     id: 4,
     name: "Beven Hynes",
     role: "Full Mouth Implants",
     company: "City Dental Hospital",
-    image: "https://ui-avatars.com/api/?name=Beven+Hynes&background=062f95&color=fff",
+    image: beven,
     text: "My wife Susy and I came to India from Coraki, Australia, for a much-awaited vacation. While exploring this beautiful country, I also decided it was time to fix my long-standing dental issues. Choosing City Dental Hospital in Rajkot for my Full Mouth Rehabilitation was the best decision I made!",
     location: "Coraki, Australia",
+    number:"+61 431233375"
   },
   {
     id: 5,
     name: "George Heary",
     role: "All-on-4 Dental Implants",
     company: "City Dental Hospital",
-    image: "https://ui-avatars.com/api/?name=George+Heary&background=062f95&color=fff",
+    image: Heary,
     text: "I came from Sydney for Full Mouth Rehabilitation and I’m truly happy with the results. I underwent All-on-4 Dental Implants with Zirconia Crowns, and the outcome has been exceptional. City Dental Hospital made me feel confident and cared for every step of the way!",
     location: "Sydney, Australia",
+    number:"+61 406891494"
   }
 ];
 
@@ -71,7 +81,7 @@ const testimonials = [
   }, [controls]);
 
   return (
-    <div className=" px-4 mt-[20px]">
+    <div className=" md:px-4 mt-[20px]">
       <div className="w-[100%] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-7">
@@ -96,29 +106,35 @@ const testimonials = [
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg border mb-[20px] shadow-lg h-[250px] w-[400px] flex flex-col shrink-0 p-4 hover:shadow-md border-[#062f95] transition-shadow duration-300"
+              className="bg-white rounded-lg border mb-[20px] shadow-lg h-[230px] w-[400px] flex flex-col shrink-0 p-4 hover:shadow-md border-[#062f95] transition-shadow duration-300"
             >
               {/* Quote Icon */}
-              <div className="mb-2">
-                <svg className="w-4 h-4 text-[#062f95]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
-                </svg>
-              </div>
-              <blockquote className="text-gray-700 text-[13px] leading-[20px] mb-3 font-[400]">
+         
+              <blockquote className="text-gray-700 text-[13px] leading-[18px] font-[400]">
                 {testimonial.text}
               </blockquote>
-              <div className="flex mt-[10px] items-center">
+
+        
+              <div className="flex mt-[16px] items-center">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover border border-[#062f95] mr-4"
+                  className="w-12 h-12 rounded-full p-[2px] object-contain border border-[#062f95] mr-4"
                 />
                 <div className="flex-grow">
                   <div className="font-semibold text-gray-900 text-sm">{testimonial.name}</div>
                   <div className=" CDH-gradiant text-[12px] font-medium">{testimonial.role}</div>
+                  <div className=' flex gap-[14px] items-center w-[200px]'>
+
+          
+                  <div className=" CDH-gradiant flex-shrink-0 text-[12px] font-medium">{testimonial.number},</div>
+                  <div className=" CDH-gradiant text-[12px] flex-shrink-0 font-medium">{testimonial.location}</div>
+                          </div>
+
+
                 </div>
                 {/* Stars */}
-                <div className="flex-shrink-0 ml-4">
+                <div className="flex-shrink-0 ">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
                       <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">

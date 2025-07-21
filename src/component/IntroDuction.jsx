@@ -83,8 +83,8 @@ export default function IntroDuction() {
             </h2>
 
             <p className="text-[15px] text-gray-700  text-justify mb-6">
-              Looking for expert dental care in India? Now, you can meet India's leading implantologist, Dr. Anand
-              Jasani, right here in the AUS! As the Director of City Dental Hospital, Rajkot, Dr. Jasani brings decades
+              Looking for expert dental care in India? Now, you can meet India's leading implantologist , Dr. Anand
+              Jasani & Team City Dental, right here in the AUS ! As the Director of City Dental Hospital, Rajkot, Dr. Jasani brings decades
               of experience in dental implants, smile makeovers, and full-mouth rehabilitation — offering you
               world-class treatment planning at affordable costs.
             </p>

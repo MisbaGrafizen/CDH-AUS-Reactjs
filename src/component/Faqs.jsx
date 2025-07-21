@@ -62,7 +62,7 @@ const faqs = [
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="font-Redhat rounded-[10px] border-[#2d07b8] border-[1.5px] overflow-hidden "
+                  className="font-Redhat rounded-[10px] border-[#2d07b8] h-fit border-[1.5px] overflow-hidden "
                 >
                   <div
                     className={`font-[600] flex justify-between bg-white  text-[#5a5555] md:items-center m px-[15px] md:py-[14px] py-[10px] text-[15] md:text-[18px] cursor-pointer ${activeIndex === index
@@ -71,7 +71,7 @@ const faqs = [
                       }`}
                     onClick={() => toggleAnswer(index)}
                   >
-                    <p className=" text-justify  font-Poppins font-[400]">{faq.question}</p>
+                    <p className=" md:text-justify  font-Poppins font-[400]">{faq.question}</p>
                     <i
                       className={`fa-regular   ml-[10px] md:mt-0 mt-[5px] ${activeIndex === index
                           ? "fa-circle-minus rotate"
@@ -85,7 +85,7 @@ const faqs = [
                         : "max-h-0 opacity-0  px-[5px] py-[1px] "
                       }`}
                   >
-                    <p className=" font-Poppins text-justify  leading-[22px] font-[300]">
+                    <p className=" font-Poppins text-justify overflow-y-auto md:overflow-hidden  leading-[22px] font-[300]">
                       {faq.answer}
                     </p>
                   </div>

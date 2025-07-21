@@ -6,6 +6,13 @@ import mainimage1 from "../../public/whyChoose/CDH-happy-clients1.webp"
 import mainimage2 from "../../public/whyChoose/CDH-happy-clients2.webp"
 import mainimage3 from "../../public/whyChoose/CDH-happy-clients3.webp"
 import mainimage4 from "../../public/whyChoose/CDH-happy-clients4.webp"
+import mainimage5 from "../../public/whyChoose/aus1.jpeg"
+import mainimage6 from "../../public/whyChoose/aus2.jpeg"
+import mainimage7 from "../../public/whyChoose/aus3.jpeg"
+import mainimage8 from "../../public/whyChoose/aus4.jpeg"
+import mainimage9 from "../../public/whyChoose/aus5.jpeg"
+
+
 
 import {
   Users,
@@ -114,7 +121,7 @@ export default function WhyChooseUs() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const images = [
-    mainimage1, mainimage2, mainimage3, mainimage4
+    mainimage1, mainimage2, mainimage3, mainimage9,mainimage4,mainimage5,mainimage7,mainimage8,
   ]
 
   useEffect(() => {

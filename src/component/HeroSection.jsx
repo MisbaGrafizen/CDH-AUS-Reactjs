@@ -167,7 +167,7 @@ export default function HeroSection() {
               className="space-y-4"
             >
               <p className="text-[16px] md:text-[18px] w-fit max-w-[800px] text-center font-[500] justify-center mx-auto  text-gray-700 leading-[20px] md:leading-tight">
-            “Your Trusted ‘’World Famous’’Dental Team from India Is Coming to Australia – <b className=" font-[5600] CDH-gradiant">Meet Us in Sydney Brisbane & Melbourne This September!”</b>
+            Your Trusted ‘’World Famous’’Dental Team from India Is Coming to Australia – <b className=" font-[5600] CDH-gradiant">Meet Us in Sydney , Brisbane & Melbourne This September!</b>
               </p>
 
               {/* <p className="text-gray-600 text-center text-[13px]">
@@ -216,7 +216,7 @@ export default function HeroSection() {
   className=""
 >
   <h3 className="text-lg font-semibold text-gray-800 pb-[10px] mb-2 text-center">
-    Our Specialties
+    Our Specialities
   </h3>
 
   {/* three cards in a row (stack vertically on small screens) */}
