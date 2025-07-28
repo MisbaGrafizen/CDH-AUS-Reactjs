@@ -165,13 +165,17 @@ export default function ListOfAppoinments() {
               </div>
 
        
+<a
+  href={`https://wa.me/917624080155?text=Hi%20I%20want%20to%20book%20a%20slot%20in%20${encodeURIComponent(event.location)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="w-full CDH-uae text-white py-2 ab rounded-lg CDH-uae transition-colors flex items-center justify-center gap-2">
+    <Phone className="w-4 h-4" />
+    Click Here To Book Your Slot
+  </button>
+</a>
 
-              <a href="https://wa.me/917624080155?text=Hi%20I%20want%20to%20book%20a%20slot">
-                <button className="w-full CDH-uae text-white py-2 ab rounded-lg CDH-uae transition-colors flex items-center justify-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  Click Here To Book Your Slot
-                         </button>
-              </a>
 
             </div>
           </div>
